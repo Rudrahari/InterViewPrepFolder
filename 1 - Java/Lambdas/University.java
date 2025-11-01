@@ -1,3 +1,5 @@
+package Lambdas;
+
 public class University {
     private String universityName;
     private int studentCount;
