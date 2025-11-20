@@ -31,6 +31,12 @@ public class Collections {
             System.out.println(val);
         }
 
+        // java wildcards
+        System.out.println("WildCards");
+        WildCardExample<List<Integer>> ex=new WildCardExample<>(List.of(1,2,3,4));
+        // only list and it's subclasses are allowed for declaration
+        // WildCardExample<HashSet<Integer>> error;
+
         //For this kind of implementation in custom class
         //we need to know the data type beforehand
         //data type can also change over time, we cannot go on and change the data type
