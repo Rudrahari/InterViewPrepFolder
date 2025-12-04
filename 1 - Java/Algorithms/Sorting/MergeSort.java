@@ -45,11 +45,45 @@ public class MergeSort {
             array[a++]=right[r++];
         }
     }
+    static void sort(int[] array,int start,int end){
+        if(start<end){
+            int mid=(start+end)/2;
+
+            sort(array,start,mid);
+            sort(array,mid+1,end);
+            merge(array,start,mid,end);
+        }
+    }
+    static void merge(int[] array,int start,int mid,int end){
+        int[] sortedPart=new int[end-start+1];
+        int left=start;
+        int right=mid+1;
+        int idx=0;
+        while(left<=mid && right<=end){
+            if(array[left]<array[right]){
+                sortedPart[idx++]=array[left++];
+            }else{
+                sortedPart[idx++]=array[right++];
+            }
+        }
+        while(left<=mid){
+            sortedPart[idx++]=array[left++];
+        }
+        while(right<=end){
+            sortedPart[idx++]=array[right++];
+        }
+
+        for(int i=0;i<sortedPart.length;i++){
+            array[start+i]=sortedPart[i];
+        }
+    }
     public static void main(String[] args) {
         int[] array = new int[]{1, 8, -9, 78, 23, 19,0};
         int length = array.length;
-        sort(array, length);
-
+        // sub array based
+        // sort(array, length);
+        // index based
+        sort(array,0,length-1);
         for (int j : array) {
             System.out.print(j + " ");
         }
