@@ -1,4 +1,4 @@
-package Concurrency;
+package DesignPatterns.CreationalPatterns;
 
 public class SingletonThreadSafe {
     //    Without synchronization and volatile, which can create multiple objects, but that's not allowed in singleton principle
